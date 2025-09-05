@@ -5,12 +5,7 @@ import com.youtube.backend.ChannelRepository;
 
 import java.util.Scanner;
 
-/**
- * FRONTEND - CONSOLE UI CLASS
- * This class is the main entry point of the application and handles all user
- * interaction via the console. It communicates with the backend (ChannelRepository)
- * to perform operations.
- */
+
 public class YouTubeConsoleUI {
     private static final ChannelRepository repository = new ChannelRepository();
     private static final Scanner scanner = new Scanner(System.in);
@@ -22,9 +17,7 @@ public class YouTubeConsoleUI {
         System.out.println("Exiting. Thank you!");
     }
 
-    /**
-     * Runs the main interactive menu loop.
-     */
+  
     private static void runMenu() {
         while (true) {
             System.out.println("\n--- MENU ---");
@@ -56,9 +49,7 @@ public class YouTubeConsoleUI {
         }
     }
 
-    /**
-     * Handles the logic for reviewing an existing channel.
-     */
+    
     private static void reviewExistingChannel() {
         System.out.println("\n--- Available Channels ---");
         for (Channel channel : repository.getAllChannels()) {
@@ -86,9 +77,7 @@ public class YouTubeConsoleUI {
         System.out.println("Review and rating updated successfully!");
     }
 
-    /**
-     * Handles the logic for adding a new channel.
-     */
+   
     private static void addNewChannel() {
         System.out.println("\n--- Add a New Channel ---");
         System.out.print("Enter the new channel name: ");
@@ -114,9 +103,7 @@ public class YouTubeConsoleUI {
         System.out.println("New channel '" + name + "' added successfully!");
     }
 
-    /**
-     * Helper method to safely get a rating between 1 and 5 from the user.
-     */
+    
     private static int getRatingInput() {
         while (true) {
             try {
@@ -132,4 +119,5 @@ public class YouTubeConsoleUI {
         }
     }
 }
+
 
